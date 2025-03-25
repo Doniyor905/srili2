@@ -22,19 +22,26 @@ export default async function AboutPage({
     return (
       <>
         <Container className="mt-[100px] mb-[100px]">
-          <h2 className="w-[500px] font-bold mx-auto leading-9 text-[35px] text-black text-center">
+          <h2 className="lg:w-[500px] w-full font-bold mx-auto leading-9 lg:text-[35px] text-[28px] text-black text-center">
             {person?.title}
           </h2>
-          <div className="mt-10 flex justify-around">
-            <div className="w-[406px]">
+          <div className="mt-10 flex justify-around  lg:flex-row flex-col">
+            <div className="lg:w-[406px] w-full lg:mr-auto mx-auto ">
               <Image width={406} height={403} src={person?.imageUrl} alt="" />
               <div className="flex gap-4 mt-4">
                 {person?.imageUrlsBottom?.map((image) => (
-                  <Image key={image} width={406} height={403} src={image} alt="images Person" />
+                  <Image
+                    className="lg:w-[406px] w-[200px]"
+                    key={image}
+                    width={406}
+                    height={403}
+                    src={image}
+                    alt="images Person"
+                  />
                 ))}
               </div>
             </div>
-            <div className="w-[50%]">
+            <div className="lg:w-[50%] w-full lg:mr-auto mx-auto lg:mt-0 mt-5">
               <h2 className="text-[25px] font-bold leading-8 ">{person?.title}</h2>
               <h3 className="text-[#898989] font-bold mb-4 text-[25px] ">{person?.name}</h3>
               <p>{person?.text}</p>
