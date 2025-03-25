@@ -15,7 +15,7 @@ export const ProductCard: React.FC<Props> = ({ id, imageUrl, title, text, classN
   return (
     <div
       className={cn(
-        'sm:w-[280px] w-[189px] flex flex-col justify-between bg-white p-3 ',
+        'sm:w-[280px] w-[180px] flex flex-col justify-between bg-white p-3 ',
         className,
       )}>
       <Image width={280} height={330} src={imageUrl} alt={title} />
