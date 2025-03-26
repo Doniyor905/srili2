@@ -30,7 +30,7 @@ export const HeaderSlider: React.FC<Props> = ({ className }) => {
         }}
         onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
         modules={[Navigation, Pagination, Mousewheel, Keyboard, Autoplay]}
-        className="mySwiper h-[500px] md:h-[350px] lg:h-[600px] overflow-hidden w-full">
+        className="mySwiper w-full aspect-[2/1]">
         {[
           {
             desc: '/assets/images/header-slider-2.jpg',
@@ -41,18 +41,10 @@ export const HeaderSlider: React.FC<Props> = ({ className }) => {
             mobile: '/assets/images/banner-parfume-mobile.jpg',
           },
         ].map((image, index) => (
-          <SwiperSlide key={index} className="relative h-[500px] overflow-hidden">
+          <SwiperSlide key={index} className="relative w-full ">
             {/* Mobile Responsive */}
-            <div className="block md:hidden w-full h-full">
-              <Image
-                className={'object-cover transition-transform duration-1200 ease-in-out'}
-                src={image.mobile}
-                alt="Header Slider"
-                fill
-              />
-            </div>
-            {/* Desktop responsive */}
-            <div className="hidden md:block w-full h-full">
+
+            <div className="">
               <Image
                 className={`object-cover transition-transform duration-1200 ease-in-out  ${
                   activeIndex == index ? 'scale-110' : 'scale-100'

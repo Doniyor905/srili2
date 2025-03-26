@@ -126,3 +126,8 @@ body {
   }
 }
 
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-size: 14px !important;
+}
