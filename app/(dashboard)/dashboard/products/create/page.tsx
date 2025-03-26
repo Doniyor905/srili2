@@ -69,6 +69,7 @@ const onSubmit = async (values: z.infer<typeof formSchema>) => {
   } catch (err) {
     alert('Bir hata oluştu!');
     console.error(err);
+  } finally {
   }
 };
 

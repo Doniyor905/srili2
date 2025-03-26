@@ -1,5 +1,6 @@
 import { Container } from '@/components/shared/container';
 import { Footer } from '@/components/shared/footer';
+import { RichText } from '@/components/shared/rich-text';
 import { TableProduct } from '@/components/shared/table-product';
 import { Button } from '@/components/ui/button';
 import { categoryLabels } from '@/constants/categories';
@@ -27,9 +28,10 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
           </div>
           <div>
             <h2 className="sm:text-[26px] font-bold mb-2  text-[20px]">{product.name_tr}</h2>
-            <p className="lg:w-[500px] w-full sm:text-base text-[14px] mb-3">
-              {product.description_tr}
-            </p>
+            <RichText
+              html={product.description_tr}
+              className="lg:w-[500px] w-full sm:text-base text-[14px] mb-3"
+            />
             <Link href="#!">
               <Button className="sm:w-[200px] w-[180px] sm:h-[50px] h-[40px] cursor-pointer">
                 İletişime geç

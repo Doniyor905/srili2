@@ -36,17 +36,12 @@ export const Footer: React.FC<Props> = ({ className }) => {
               <h3 className="lg:text-2xl text-[18px] font-bold">Srılı Parfüm</h3>
               <ul className="mt-2">
                 <li className="text-[#9A9A9A]">
-                  <Link className="lg:text-base text-[14px]" href="#!">
-                    Hakkımızda
-                  </Link>
-                </li>
-                <li className="text-[#9A9A9A]">
-                  <Link className="lg:text-base text-[14px]" href="#!">
+                  <Link className="lg:text-base text-[14px]" href="/works">
                     Faliyetimiz
                   </Link>
                 </li>
                 <li className="text-[#9A9A9A]">
-                  <Link className="lg:text-base text-[14px]" href="#!">
+                  <Link className="lg:text-base text-[14px]" href="/contact">
                     İletişim
                   </Link>
                 </li>
@@ -87,19 +82,19 @@ export const Footer: React.FC<Props> = ({ className }) => {
                     className="lg:text-base text-[14px] flex items-center gap-2"
                     href="https://www.instagram.com/srilicosmetic/">
                     <Instagram size={16} />
-                    srilicosmetic
+                    @srilicosmetic
                   </Link>
                 </li>
                 <li className="lg:text-base text-[14px] text-[#9A9A9A]">
-                  <Link className="flex items-center gap-2" href="tel:+905308999912">
+                  <Link className="flex items-center gap-2" href="https://wa.me/+905308999912">
                     <Image width={16} height={16} src="/assets/whatsapp-icon.svg" alt="Whatsapp" />0
                     <p>530 899 99 12</p>
                   </Link>
                 </li>
                 <li className="text-[#9A9A9A] lg:text-base text-[14px]">
-                  <Link className="flex items-center gap-2" href="#!">
+                  <Link className="flex items-center gap-2" href="mailto:srilicosmetic@gmail.com">
                     <Mail size={16} />
-                    İletişim
+                    srilicosmetic@gmail.com
                   </Link>
                 </li>
               </ul>

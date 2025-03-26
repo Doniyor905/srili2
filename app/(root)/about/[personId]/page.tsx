@@ -1,7 +1,9 @@
 import { Container } from '@/components/shared/container';
 import { Footer } from '@/components/shared/footer';
 import { prisma } from '@/prisma/prisma-client';
+import { Phone } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 import React, { JSX } from 'react';
 
 export default async function AboutPage({
@@ -45,6 +47,21 @@ export default async function AboutPage({
               <h2 className="text-[25px] font-bold leading-8 ">{person?.title}</h2>
               <h3 className="text-[#898989] font-bold mb-4 text-[25px] ">{person?.name}</h3>
               <p>{person?.text}</p>
+              <div>
+                {person.personId === 'eyup-demirbilek' ? (
+                  <Link
+                    className="flex gap-2 items-center mt-3.5"
+                    href="https://wa.me/+905456814006">
+                    <Phone /> +90 545 681 40 06
+                  </Link>
+                ) : (
+                  <Link
+                    className="flex gap-2 items-center mt-3.5"
+                    href="https://wa.me/+905304120858">
+                    <Phone /> +90 530 412 08 58
+                  </Link>
+                )}
+              </div>
             </div>
           </div>
         </Container>
