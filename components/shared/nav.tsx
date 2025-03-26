@@ -43,7 +43,7 @@ export const Nav: React.FC<Props> = ({ className }) => {
         <ul
           className={
             openMenu === true
-              ? 'sm:flex sm:gap-6 absolute sm:static top-[80px] transition-all p-4 left-0 justify-center items-center w-full bg-amber-50 sm:bg-white sm:h-[80px] h-[150px] flex-col sm:flex-row gap-3 z-10'
+              ? 'sm:flex sm:gap-6 fixed sm:static top-[0px] transition-all p-4 left-0 justify-center items-center w-[100%]  bg-white sm:h-[80px] h-full flex-col sm:flex-row gap-3 z-10 pt-[50px]'
               : 'sm:flex sm:gap-6 absolute sm:static -top-[100%] transition-all p-4 left-0 justify-center items-center w-full bg-amber-50 sm:bg-white sm:h-[80px] h-[150px] flex-col sm:flex-row gap-3 z-10'
           }>
           {navList.map((item) => (
@@ -82,7 +82,7 @@ export const Nav: React.FC<Props> = ({ className }) => {
           <InputSearch />
           <Language />
           <div className="sm:hidden block" onClick={() => setOpenMenu(!openMenu)}>
-            {openMenu ? <X /> : <Menu />}
+            {openMenu ? <X className="absolute right-[20px] top-[30px] z-50" /> : <Menu />}
           </div>
         </div>
       </Container>

@@ -20,10 +20,10 @@ export const ProductCard: React.FC<Props> = ({ id, imageUrl, title, text, classN
         className,
       )}>
       <Image width={280} height={330} src={imageUrl} alt={title} />
-      <h2 className="sm:text-[20px] text-[12px] leading-[18px] text-black font-semibold mb-2">
+      <h2 className="sm:text-[20px] text-[14px] leading-[18px] text-black font-semibold mb-2">
         {title}
       </h2>
-      <RichText html={text} className="sm:text-sm text-[8px] text-[#9A9A9A] mb-2" />
+      <RichText html={text} className="sm:text-sm text-[12px] text-[#9A9A9A] mb-2" />
       <Link
         className="w-full sm:h-[44px] h-[35px] sm:text-[16px] text-[12px] border-2 border-primary hover:bg-transparent transition hover:text-primary bg-primary text-white flex justify-center items-center"
         href={`/product/${id}`}>

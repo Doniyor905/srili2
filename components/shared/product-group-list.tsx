@@ -54,7 +54,7 @@ export const ProductGroupList: React.FC = () => {
           activeCategory={activeCategory}
           className="mt-10"
         />
-        <div className="flex flex-wrap sm:gap-[20px] gap-[10px] mt-7 sm:justify-center justify-between">
+        <div className="flex flex-wrap sm:gap-[20px] gap-[8px] mt-7 sm:justify-center justify-center">
           {isLoading
             ? Array(8)
                 .fill(0)

@@ -30,10 +30,10 @@ export const HeaderSlider: React.FC<Props> = ({ className }) => {
         }}
         onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
         modules={[Navigation, Pagination, Mousewheel, Keyboard, Autoplay]}
-        className="mySwiper w-full aspect-[2/1]">
+        className="mySwiper w-full aspect-[3/1] ">
         {[
           {
-            desc: '/assets/images/header-slider-2.jpg',
+            desc: '/assets/images/1.jpg',
             mobile: '/assets/images/banner-parfume-mobile-2.jpg',
           },
           {
