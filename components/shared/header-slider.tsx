@@ -30,14 +30,14 @@ export const HeaderSlider: React.FC<Props> = ({ className }) => {
         }}
         onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
         modules={[Navigation, Pagination, Mousewheel, Keyboard, Autoplay]}
-        className="mySwiper w-full aspect-[3/1] ">
+        className="mySwiper slider-1 w-full aspect-[3/1]">
         {[
           {
             desc: '/assets/images/1.jpg',
             mobile: '/assets/images/banner-parfume-mobile-2.jpg',
           },
           {
-            desc: '/assets/images/header-slider.jpg',
+            desc: '/assets/images/2.jpg',
             mobile: '/assets/images/banner-parfume-mobile.jpg',
           },
         ].map((image, index) => (
@@ -50,6 +50,44 @@ export const HeaderSlider: React.FC<Props> = ({ className }) => {
                   activeIndex == index ? 'scale-110' : 'scale-100'
                 }`}
                 src={image.desc}
+                alt="Header Slider"
+                fill
+              />
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+
+      <Swiper
+        cssMode={true}
+        navigation={true}
+        pagination={true}
+        mousewheel={true}
+        keyboard={true}
+        autoplay={{
+          delay: 5000,
+          disableOnInteraction: false,
+        }}
+        onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
+        modules={[Navigation, Pagination, Mousewheel, Keyboard, Autoplay]}
+        className="mySwiper slider-2 w-full h-dvh">
+        {[
+          {
+            mobile: '/assets/images/mob.jpg',
+          },
+          {
+            mobile: '/assets/images/mob-2.jpg',
+          },
+        ].map((image, index) => (
+          <SwiperSlide key={index} className="relative w-full overflow-hidden">
+            {/* Mobile Responsive */}
+
+            <div className="">
+              <Image
+                className={`object-cover transition-transform duration-1200 ease-in-out  ${
+                  activeIndex == index ? 'scale-110' : 'scale-100'
+                }`}
+                src={image.mobile}
                 alt="Header Slider"
                 fill
               />

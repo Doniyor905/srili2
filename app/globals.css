@@ -131,3 +131,20 @@ body {
 .swiper-button-next::after {
   font-size: 14px !important;
 }
+
+.slider-2 {
+  display: none !important;
+}
+
+.slider-1 {
+  display: block !important;
+}
+
+@media(max-width:500px) {
+  .slider-1 {
+    display: none !important;
+  }
+  .slider-2 {
+    display: block !important;
+  }
+}
