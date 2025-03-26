@@ -51,10 +51,10 @@ export const Nav: React.FC<Props> = ({ className }) => {
               key={item.name}
               onMouseEnter={() => item.dropdownItems && setIsDropdownOpen(true)}
               onMouseLeave={() => item.dropdownItems && setIsDropdownOpen(false)}
-              className="relative after:block after:w-full after:h-[2px] after:bg-primary after:scale-x-0 after:origin-center after:transition-transform after:duration-300 hover:after:scale-x-100">
+              className="relative  after:block after:w-full after:h-[2px] after:bg-primary after:scale-x-0 after:origin-center after:transition-transform after:duration-300 hover:after:scale-x-100">
               <Link
                 onClick={() => !item.dropdownItems && setOpenMenu(false)}
-                className="text-primary flex items-center gap-1"
+                className="text-primary text-[18px] flex items-center sm:gap-1 gap-4"
                 href={item.href || ''}>
                 {item.name}
                 {item.dropdownItems && <ChevronDown size={16} />}
