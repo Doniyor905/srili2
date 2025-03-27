@@ -60,8 +60,8 @@ export const ProductGroupList: React.FC = () => {
                 .fill(0)
                 .map((_, index) => (
                   <div key={index}>
-                    <Skeleton className="bg-[#eeeeee] w-[280px] h-[250px]" />
-                    <Skeleton className="bg-[#eeeeee] w-[280px] h-[50px] mt-3" />
+                    <Skeleton className="bg-[#eeeeee] w-[180px] h-[150px] sm:w-[280px] sm:h-[250px]" />
+                    <Skeleton className="bg-[#eeeeee] sm:w-[180px] sm:h-[30px] mt-3" />
                   </div>
                 ))
             : visibleProduct.map((item) => (
