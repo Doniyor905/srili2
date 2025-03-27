@@ -1,7 +1,7 @@
 import { Poppins } from 'next/font/google';
 import './globals.css';
 import Script from 'next/script';
-
+import { Analytics } from '@vercel/analytics/react';
 const poppinsSans = Poppins({
   variable: '--font-poppins',
   subsets: ['latin'],
@@ -21,12 +21,7 @@ export default function RootLayout({
       </head>
       <body className={`${poppinsSans.variable} antialiased`}>
         {children}
-
-        {/* <iframe
-          src="https://www.chatbase.co/chatbot-iframe/8dGeG7yhIzyMNEUZM_COZ"
-          width="100%"
-          style={{ height: '100%', minHeight: '700px' }}
-          frameBorder="0"></iframe> */}
+        <Analytics />
 
         <Script
           id="chatbase-script"
