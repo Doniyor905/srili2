@@ -2,17 +2,15 @@ import { Poppins } from 'next/font/google';
 import './globals.css';
 import Script from 'next/script';
 import { Analytics } from '@vercel/analytics/react';
+import { LanguageProvider } from '../context/LanguageContext';
+
 const poppinsSans = Poppins({
   variable: '--font-poppins',
   subsets: ['latin'],
   weight: ['400', '500', '600', '700', '800', '900'],
 });
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <head>
@@ -20,9 +18,8 @@ export default function RootLayout({
         <link data-rh="true" rel="icon" href="/assets/images/favicon.png" />
       </head>
       <body className={`${poppinsSans.variable} antialiased`}>
-        {children}
+        <LanguageProvider>{children}</LanguageProvider>
         <Analytics />
-
         <Script
           id="chatbase-script"
           strategy="afterInteractive"

@@ -1,4 +1,5 @@
 import { Table, TableBody, TableCaption, TableCell, TableRow } from '@/components/ui/table';
+import { useLanguage } from '@/context/LanguageContext';
 interface Props {
   category: string;
   size: string | null;
@@ -6,24 +7,25 @@ interface Props {
 }
 
 export const TableProduct: React.FC<Props> = ({ category, size, koku }) => {
+  const { locale } = useLanguage();
   const invoices = [
     {
-      invoice: 'Cinsiyet',
+      invoice: locale === 'en' ? 'Gender' : 'Cinsiyet',
       paymentStatus: category,
     },
     {
-      invoice: 'Hacim',
+      invoice: locale === 'en' ? 'Volume' : 'Hacim',
       paymentStatus: size,
     },
     {
-      invoice: 'Koku Ailesi',
+      invoice: locale === 'en' ? 'Fragrance Family' : 'Koku Ailesi',
       paymentStatus: koku,
     },
   ];
   return (
     <Table className="w-full mx-auto mt-[50px]">
       <TableCaption className="caption-top text-left font-bold text-[26px] text-black mb-5">
-        Ürün hakkında
+        {locale === 'en' ? 'About the product' : 'Ürün hakkında'}
       </TableCaption>
 
       <TableBody>

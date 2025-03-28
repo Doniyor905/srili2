@@ -1,15 +1,21 @@
+'use client';
 import { AdressItem } from '@/components/shared/adress-item';
 import { Container } from '@/components/shared/container';
 import { Footer } from '@/components/shared/footer';
 import { ContactForm } from '@/components/shared/form-contact';
 import { Title } from '@/components/shared/title';
+import { useLanguage } from '@/context/LanguageContext';
 import Image from 'next/image';
 
 export default function ContactPage() {
+  const { locale } = useLanguage();
   return (
     <>
       <Container>
-        <Title text="İletişim bilgilerimiz" className="mt-[50px]" />
+        <Title
+          text={locale === 'en' ? 'Contact Us' : 'İletişim bilgilerimiz'}
+          className="mt-[50px]"
+        />
         <div className="flex lg:justify-between justify-center lg:flex-row flex-col mt-[50px] mb-[100px] gap-[20px]">
           <div className="sm:w-[600px] w-full mx-auto">
             <ContactForm />

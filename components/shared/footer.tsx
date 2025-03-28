@@ -1,15 +1,19 @@
+'use client';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import { Container } from './container';
 import { Instagram, Mail } from 'lucide-react';
+import { useLanguage } from '@/context/LanguageContext';
 
 interface Props {
   className?: string;
 }
 
 export const Footer: React.FC<Props> = ({ className }) => {
+  const { locale } = useLanguage();
+
   return (
     <div className="bg-secondary pt-7 pb-7">
       <Container>
@@ -27,55 +31,63 @@ export const Footer: React.FC<Props> = ({ className }) => {
               height={130}
             />
             <p className="mt-2 sm:text-[14px] text-[12px] text-[#9A9A9A]">
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Ipsum is
-              simply dummy text of the printing and typesetting industry.
+              {locale === 'en'
+                ? 'Srılı is a premium perfume manufacturer that combines art, quality, and innovation. Over the years, we have created unique fragrances inspired by nature, culture, and modern trends.'
+                : 'Srılı — sanat, kalite ve yeniliği bir araya getiren premium bir parfüm üreticisidir. Yıllar içinde doğadan, kültürden ve modern trendlerden ilham alan benzersiz kokular yarattık.'}
             </p>
           </div>
           <div className="flex w-[50%] gap-7 sm:flex-row   flex-col">
             <div>
-              <h3 className="lg:text-2xl text-[18px] font-bold">Srılı Parfüm</h3>
+              <h3 className="lg:text-2xl text-[18px] font-bold">
+                {locale === 'en' ? 'Srılı Parfum' : 'Srılı Parfüm'}
+              </h3>
               <ul className="mt-2">
                 <li className="text-[#9A9A9A]">
                   <Link className="lg:text-base text-[14px]" href="/works">
-                    Faliyetimiz
+                    {locale === 'en' ? 'Our activities' : 'Faaliyetlerimiz'}
                   </Link>
                 </li>
                 <li className="text-[#9A9A9A]">
                   <Link className="lg:text-base text-[14px]" href="/contact">
-                    İletişim
+                    {locale === 'en' ? 'Contact' : 'İletişim'}
                   </Link>
                 </li>
               </ul>
             </div>
 
             <div>
-              <h3 className="lg:text-2xl text-[18px] font-bold">Kategoriler</h3>
+              <h3 className="lg:text-2xl text-[18px] font-bold">
+                {locale === 'en' ? 'Cateogories' : 'Kategoriler'}
+              </h3>
               <ul className="mt-2">
                 <li className="text-[#9A9A9A]">
                   <Link className="lg:text-base text-[14px]" href="/category/male">
-                    Erkek parfümler
+                    {locale === 'en' ? 'Male parfums' : 'Erkek parfümler'}
                   </Link>
                 </li>
                 <li className="text-[#9A9A9A]">
                   <Link className="lg:text-base text-[14px]" href="/category/female">
-                    Kadın parfümler
+                    {locale === 'en' ? 'Famale parfums' : 'Kadın parfümle'}
                   </Link>
                 </li>
                 <li className="text-[#9A9A9A]">
                   <Link className="lg:text-base text-[14px]" href="/category/unisex">
-                    Unisex
+                    {locale === 'en' ? 'Unisex parfums' : 'Unisex parfümle'}
                   </Link>
                 </li>
                 <li className="text-[#9A9A9A]">
                   <Link className="lg:text-base text-[14px]" href="/category/cosmetics">
                     Güzellik ve Bakım
+                    {locale === 'en' ? 'Cosmetics' : 'Güzellik ve Bakım'}
                   </Link>
                 </li>
               </ul>
             </div>
 
             <div>
-              <h3 className="lg:text-2xl text-[18px] font-bold">İletişim</h3>
+              <h3 className="lg:text-2xl text-[18px] font-bold">
+                {locale === 'en' ? 'Contact' : 'İletişim'}
+              </h3>
               <ul className="mt-2">
                 <li className="text-[#9A9A9A]">
                   <Link

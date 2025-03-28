@@ -14,6 +14,7 @@ import Image from 'next/image';
 import { Api } from '@/services/api-client';
 import { Product } from '@prisma/client';
 import Link from 'next/link';
+import { useLanguage } from '@/context/LanguageContext';
 interface Props {
   className?: string;
 }
@@ -22,6 +23,7 @@ export const InputSearch: React.FC<Props> = () => {
   const [searchQuery, setSearchQuery] = React.useState('');
   const [products, setProducts] = React.useState<Product[]>([]);
   const [open, setOpen] = React.useState(false);
+  const { locale } = useLanguage();
   useDebounce(
     async () => {
       try {
@@ -47,7 +49,9 @@ export const InputSearch: React.FC<Props> = () => {
         </DialogTrigger>
         <DialogContent className="">
           <DialogHeader>
-            <DialogTitle className="text-center">Ürünü ara</DialogTitle>
+            <DialogTitle className="text-center">
+              {locale === 'en' ? 'Search' : 'Ürünü ara'}
+            </DialogTitle>
           </DialogHeader>
           <input
             className="bg-[#f6f6f6] border border-[#a7a7a7] flex z-30 relative mx-auto w-full h-10 outline-0 pl-4 rounded-sm"
@@ -57,7 +61,13 @@ export const InputSearch: React.FC<Props> = () => {
             placeholder="Ara..."
           />
           <h3 className="text-center">
-            {products.length == 0 ? 'Ürün bulunmadi' : 'Bulunan ürünler'}
+            {products.length == 0
+              ? locale === 'en'
+                ? 'Product not found'
+                : 'Ürün bulunmadi'
+              : locale === 'en'
+              ? 'Products found'
+              : 'Bulunan ürünler'}
           </h3>
 
           {products.map((product) => (

@@ -1,0 +1,12 @@
+{
+  "nav": {
+    "home": "Ana sayfa",
+    "products": "Ürünler",
+    "male": "Erkek",
+    "female": "Kadın",
+    "unisex": "Unisex",
+    "cosmetics": "Güzellik ve Bakım",
+    "works": "Faaliyetlerimiz",
+    "contact": "İletişim"
+  }
+}

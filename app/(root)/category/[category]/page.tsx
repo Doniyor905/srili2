@@ -24,17 +24,11 @@ export default async function CategoryPage({
   return (
     <Container>
       <h2 className="text-center mt-10 text-3xl font-bold text-primary">
-        {categoryLabels[categorySlug]}
+        {categoryLabels[categorySlug]?.en || categorySlug}
       </h2>
       <div className="mt-10 flex sm:justify-center justify-between gap-4 flex-wrap">
         {products.map((product) => (
-          <ProductCard
-            key={product.id}
-            id={product.id}
-            title={product.name_tr}
-            text={product.description_tr}
-            imageUrl={product.imageUrl}
-          />
+          <ProductCard key={product.id} product={product} />
         ))}
       </div>
     </Container>

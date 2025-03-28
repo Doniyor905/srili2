@@ -31,11 +31,14 @@ model AboutGallery {
 model About {
   id              Int      @id @default(autoincrement())
   personId        String
-  title           String
-  name            String
+  title_en        String
+  title_tr        String
+  name_en         String
+  name_tr         String
   imageUrl        String
   imageUrlsBottom String[]
-  text            String
+  text_en         String
+  text_tr         String
 }
 
 enum Category {

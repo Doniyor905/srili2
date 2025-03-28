@@ -1,22 +1,12 @@
-import { AboutGallery, product, personal } from './constants';
+import { personal } from './constants';
 import { prisma } from './prisma-client';
 async function up() {
-  await prisma.product.createMany({
-    data: product,
-  });
-
-  await prisma.aboutGallery.createMany({
-    data: AboutGallery,
-  });
-
   await prisma.about.createMany({
     data: personal,
   });
 }
 
 async function down() {
-  await prisma.$executeRaw`TRUNCATE TABLE "Product" RESTART IDENTITY CASCADE`;
-  await prisma.$executeRaw`TRUNCATE TABLE "AboutGallery" RESTART IDENTITY CASCADE`;
   await prisma.$executeRaw`TRUNCATE TABLE "About" RESTART IDENTITY CASCADE`;
 }
 

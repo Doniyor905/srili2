@@ -1,0 +1,12 @@
+{
+  "nav": {
+    "home": "Home",
+    "products": "Products",
+    "male": "Male",
+    "female": "Female",
+    "unisex": "Unisex",
+    "cosmetics": "Cosmetics",
+    "works": "Our Works",
+    "contact": "Contact"
+  }
+}

@@ -8,12 +8,15 @@ import { Product } from '@prisma/client';
 import { Api } from '@/services/api-client';
 import { Button } from '../ui/button';
 import { Skeleton } from '../ui/skeleton';
+import { useLanguage } from '@/context/LanguageContext';
 
 export const ProductGroupList: React.FC = () => {
   const [product, setProduct] = React.useState<Product[]>([]);
   const [activeCategory, serActiveCategory] = React.useState<string | null>(null);
   const [visibleCount, setVisibleCount] = React.useState(8);
   const [isLoading, setIsLoading] = React.useState(true);
+  const { locale } = useLanguage();
+
   React.useEffect(() => {
     async function fetchProduct() {
       try {
@@ -48,7 +51,7 @@ export const ProductGroupList: React.FC = () => {
   return (
     <div className="mt-10">
       <Container>
-        <Title text="Ürünlerimiz" />
+        <Title text={locale === 'en' ? 'Products' : 'Ürünlerimiz'} />
         <Categories
           onSelect={handeleCategorySelect}
           activeCategory={activeCategory}
@@ -64,15 +67,7 @@ export const ProductGroupList: React.FC = () => {
                     <Skeleton className="bg-[#eeeeee] sm:w-[180px] sm:h-[30px] mt-3" />
                   </div>
                 ))
-            : visibleProduct.map((item) => (
-                <ProductCard
-                  key={item.id}
-                  id={item.id}
-                  title={item.name_tr}
-                  text={item.description_tr}
-                  imageUrl={item.imageUrl}
-                />
-              ))}
+            : visibleProduct.map((item) => <ProductCard key={item.id} product={item} />)}
         </div>
 
         {visibleCount < product.length && (
@@ -81,7 +76,7 @@ export const ProductGroupList: React.FC = () => {
               onClick={handleShowMore}
               variant="outline"
               className="cursor-pointer w-[180px] h-[40px]">
-              Daha Fazla
+              {locale === 'en' ? 'More' : 'Daha Fazla'}
             </Button>
           </div>
         )}

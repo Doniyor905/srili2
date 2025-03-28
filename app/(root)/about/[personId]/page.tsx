@@ -1,9 +1,8 @@
+import { AboutItem } from '@/components/shared/about-item';
 import { Container } from '@/components/shared/container';
 import { Footer } from '@/components/shared/footer';
 import { prisma } from '@/prisma/prisma-client';
-import { Phone } from 'lucide-react';
-import Image from 'next/image';
-import Link from 'next/link';
+
 import React, { JSX } from 'react';
 
 export default async function AboutPage({
@@ -24,16 +23,16 @@ export default async function AboutPage({
     return (
       <>
         <Container className="mt-[100px] mb-[100px]">
-          <h2 className="lg:w-[500px] w-full font-bold mx-auto leading-9 lg:text-[35px] text-[28px] text-black text-center">
+          {/* <h2 className="lg:w-[500px] w-full font-bold mx-auto leading-9 lg:text-[35px] text-[28px] text-black text-center">
             {person?.title}
           </h2>
           <div className="mt-10 flex justify-around  lg:flex-row flex-col">
             <div className="lg:w-[406px] w-full lg:mr-auto mx-auto ">
               <Image width={406} height={403} src={person?.imageUrl} alt="" />
-              <div className="flex gap-4 mt-4">
+              <div className="flex gap-4 items-center mt-4">
                 {person?.imageUrlsBottom?.map((image) => (
                   <Image
-                    className="lg:w-[406px] w-[200px]"
+                    className="lg:w-[406px] w-[200px] "
                     key={image}
                     width={406}
                     height={403}
@@ -63,7 +62,8 @@ export default async function AboutPage({
                 )}
               </div>
             </div>
-          </div>
+          </div> */}
+          <AboutItem person={person} />
         </Container>
         <Footer />
       </>

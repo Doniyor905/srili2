@@ -7,33 +7,36 @@ import Link from 'next/link';
 import { Language } from './language';
 import { ChevronDown, Menu, X } from 'lucide-react';
 import { InputSearch } from './input-search';
-
+import { useLanguage } from '@/context/LanguageContext';
+import { getNavList } from './nav-item';
 interface Props {
   className?: string;
 }
 
-const category = [
-  { key: 'MALE', label: 'Erkek Parfümler' },
-  { key: 'FEMALE', label: 'Kadın Parfümler' },
-  { key: 'UNISEX', label: 'Unisex Parfümler' },
-  { key: 'COSMETICS', label: 'Güzellik & Bakım' },
-];
+// const category = [
+//   { key: 'MALE', label: 'Erkek Parfümler' },
+//   { key: 'FEMALE', label: 'Kadın Parfümler' },
+//   { key: 'UNISEX', label: 'Unisex Parfümler' },
+//   { key: 'COSMETICS', label: 'Güzellik & Bakım' },
+// ];
 
-const navList = [
-  { name: 'Ana sayfa', href: '/' },
-  {
-    name: 'Ürünler',
-    href: null,
-    hasDropdown: true,
-    dropdownItems: category,
-  },
-  { name: 'Faliyetimiz', href: '/works' },
-  { name: 'İletişim', href: '/contact' },
-];
+// const navList = [
+//   { name: 'Ana sayfa', href: '/' },
+//   {
+//     name: 'Ürünler',
+//     href: null,
+//     hasDropdown: true,
+//     dropdownItems: category,
+//   },
+//   { name: 'Faliyetimiz', href: '/works' },
+//   { name: 'İletişim', href: '/contact' },
+// ];
 
 export const Nav: React.FC<Props> = ({ className }) => {
   const [isDropdownOpen, setIsDropdownOpen] = React.useState(false);
   const [openMenu, setOpenMenu] = React.useState(false);
+  const { messages } = useLanguage();
+  const navList = getNavList(messages);
   return (
     <div className={cn('bg-white shadow-md sm:relative z-50', className)}>
       <Container className="h-20 flex justify-between items-center">
@@ -77,7 +80,6 @@ export const Nav: React.FC<Props> = ({ className }) => {
             </li>
           ))}
         </ul>
-
         <div className="flex gap-3 items-center">
           <InputSearch />
           <Language />

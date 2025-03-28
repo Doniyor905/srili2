@@ -15,6 +15,7 @@ import {
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '../ui/textarea';
+import { useLanguage } from '@/context/LanguageContext';
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -36,6 +37,8 @@ function onSubmit(values: z.infer<typeof formSchema>) {
 }
 
 export function ContactForm() {
+  const { locale } = useLanguage();
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -54,9 +57,9 @@ export function ContactForm() {
             name="name"
             render={({ field }) => (
               <FormItem className="w-full">
-                <FormLabel>İsm</FormLabel>
+                <FormLabel>{locale === 'en' ? 'Name' : 'İsm'}</FormLabel>
                 <FormControl>
-                  <Input placeholder="İsm" {...field} />
+                  <Input placeholder={locale === 'en' ? 'Name' : 'İsm'} {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -68,9 +71,9 @@ export function ContactForm() {
             name="lastname"
             render={({ field }) => (
               <FormItem className="w-full">
-                <FormLabel>Soyad</FormLabel>
+                <FormLabel>{locale === 'en' ? 'LastName' : 'Soyad'}</FormLabel>
                 <FormControl>
-                  <Input placeholder="Soyad" {...field} />
+                  <Input placeholder={locale === 'en' ? 'LastName' : 'Soyad'} {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -82,16 +85,16 @@ export function ContactForm() {
           name="desc"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Cep Telefon</FormLabel>
+              <FormLabel>{locale === 'en' ? 'Phone' : 'Cap Telegfon'}</FormLabel>
               <FormControl>
-                <Input placeholder="Cep Telefon" {...field} />
+                <Input placeholder={locale === 'en' ? 'Phone' : 'Cap Telegfon'} {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
           )}
         />
-        <Textarea placeholder="Mesaj yazınız" />
-        <Button type="submit">Gönder</Button>
+        <Textarea placeholder={locale === 'en' ? 'Whire message' : 'Mesaj yazınız'} />
+        <Button type="submit">{locale === 'en' ? 'Send' : 'Gönder'}</Button>
       </form>
     </Form>
   );
