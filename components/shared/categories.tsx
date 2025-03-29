@@ -11,7 +11,7 @@ interface Props {
 const categories = [
   { key: null, label_tr: 'Tümü', label_en: 'All' },
   { key: 'MALE', label_tr: 'Erkek', label_en: 'MALE' },
-  { key: 'FEMALE', label_tr: 'Kadin', label_en: 'FEMALE' },
+  { key: 'FEMALE', label_tr: 'Kadın', label_en: 'FEMALE' },
   { key: 'UNISEX', label_tr: 'Unisex', label_en: 'UNISEX' },
   { key: 'COSMETICS', label_tr: 'Güzellik', label_en: 'COSMETICS' },
 ];
