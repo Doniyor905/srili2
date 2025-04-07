@@ -35,6 +35,9 @@ export const metadata: Metadata = {
   icons: {
     icon: '/assets/images/favicon.png',
   },
+  other: {
+    'google-site-verification': 'LJMEj3ctEjjavVf2uf96bWS7ijXqXru77yT4VkXv7Nc',
+  },
 };
 
 export default async function HomeLayout({
