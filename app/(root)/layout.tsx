@@ -2,7 +2,39 @@ import type { Metadata } from 'next';
 import { Nav } from '@/components/shared/nav';
 export const metadata: Metadata = {
   title: 'Srili Parfüm',
-  description: 'Güzelliğin ve zarafetin arkasındaki özeni ve tutkuyu keşfedin!',
+  description: 'Srılı Parfümes — her notasında stil ve zarafet taşıyan özgün kokular.',
+  keywords: [
+    'parfümler',
+    'kadın parfümleri',
+    'erkek parfümleri',
+    'unisex parfümler',
+    'kozmetik',
+    'güzellik',
+    'Srılı Parfümes',
+    'kokular',
+    'parfümeri',
+    'kişisel bakım',
+  ],
+  openGraph: {
+    title: 'Srılı Parfümes',
+    description: 'Srılı Parfümes — her notasında stil ve zarafet taşıyan özgün kokular.',
+    url: 'https://www.sriliparfume.com.tr/',
+    siteName: 'Srılı Parfümes',
+    images: [
+      {
+        url: '/assets/images/favicon.png', // Замени на ссылку к изображению
+        width: 110,
+        height: 110,
+        alt: 'Srılı Parfümes',
+      },
+    ],
+    type: 'website',
+  },
+  robots: 'index, follow',
+  viewport: 'width=device-width, initial-scale=1',
+  icons: {
+    icon: '/assets/images/favicon.png',
+  },
 };
 
 export default async function HomeLayout({
