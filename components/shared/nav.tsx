@@ -70,7 +70,7 @@ export const Nav: React.FC<Props> = ({ className }) => {
                       <Link
                         onClick={() => setOpenMenu(false)}
                         href={`/category/${subItem.key.toLowerCase()}`}
-                        className="block px-4 py-2 text-gray-800 hover:bg-secondary">
+                        className="block px-4 py-2 text-gray-800  hover:bg-secondary">
                         {subItem.label}
                       </Link>
                     </li>

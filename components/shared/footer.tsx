@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import { Container } from './container';
-import { Instagram, Mail } from 'lucide-react';
+import { Instagram, Mail, Phone } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 
 interface Props {
@@ -97,10 +97,18 @@ export const Footer: React.FC<Props> = ({ className }) => {
                     @srilicosmetic
                   </Link>
                 </li>
-                <li className="lg:text-base text-[14px] text-[#9A9A9A]">
+                <li className="lg:text-base text-[14px] text-[#9A9A9A] flex flex-col gap-2">
                   <Link className="flex items-center gap-2" href="https://wa.me/+905308999912">
                     <Image width={16} height={16} src="/assets/whatsapp-icon.svg" alt="Whatsapp" />0
                     <p>530 899 99 12</p>
+                  </Link>
+                  <Link className="flex items-center gap-2" href="https://wa.me/+905456814006">
+                    <Image width={16} height={16} src="/assets/whatsapp-icon.svg" alt="Whatsapp" />
+                    <p>0 545 681 40 06</p>
+                  </Link>
+                  <Link className="flex items-center gap-2" href="https://wa.me/+4474414477026">
+                    <Phone size={16} />
+                    <p>+44 7441 4477026</p>
                   </Link>
                 </li>
                 <li className="text-[#9A9A9A] lg:text-base text-[14px]">
